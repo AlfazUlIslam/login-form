@@ -1,10 +1,11 @@
-import LoginForm from './LoginForm/LoginForm'
+import LoginFormDark from './components/LoginFormDark/LoginFormDark'
+// import LoginFormLight from "./components/LoginFormLight/LoginFormLight"
 import './App.css'
 
 function App() {
   return (
-    <div>
-      <LoginForm />
+    <div className='app'>
+      <LoginFormDark />
     </div>
   )
 }

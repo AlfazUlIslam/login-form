@@ -1,10 +1,10 @@
 import { useState } from "react"
+import { FormHeading } from ".."
 import { MdError } from "react-icons/md";
 import { ImCheckboxChecked } from "react-icons/im";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
-import "./LoginForm.css"
 
-const LoginForm = () => {
+const LoginFormLight = () => {
     const [formdata, setFormdata] = useState({
         email: "",
         password: ""
@@ -57,21 +57,17 @@ const LoginForm = () => {
     return (
         // login form bg
         <div className="w-[100vw] h-[100vh] bg-gradient-to-r 
-        from-darkMidnightBlue to-mediumMidnightBlue flex flex-col 
+        from-[#000] to-[#004] flex flex-col 
         justify-center items-center gap-6">
             {/* login form */}
-            <div className="w-[540px] h-[456px] rounded-[20px] 
+            <form className="w-[540px] h-[456px] rounded-[20px] 
             bg-[#FFF] px-[72px] py-[48px]">
                 {/* heading */}
-                <h1 className="w-[308px] mx-auto mb-[32px] 
-                font-poppins font-medium text-[28px] leading-[28px] 
-                text-[#000]">
-                    Login to your account
-                </h1>
+                <FormHeading content={"Login to your account"} />
                 {/* form group email */}
                 <div className="flex flex-col items-start">
                     <label className="mb-[12px] font-poppins font-normal 
-                    text-[16px] leading-[16px]">
+                    text-[16px] text-[#344054] leading-[16px]">
                         Email
                     </label>
                     <input 
@@ -81,11 +77,11 @@ const LoginForm = () => {
                         onClick={handleInputClick}
                         type="text" 
                         placeholder="balamia@gmail.com" 
-                        className="w-[396px] h-[48px] 
-                        rounded-8px border-[3px] border-[#DDD] 
-                        pl-[16px] font-poppins font-normal 
-                        text-[14px] leading-[14px] focus:ouline-none 
-                        focus:outline-primaryBlue"
+                        className="w-[396px] h-[48px] rounded-[8px] 
+                        border-[3px] border-[#DDD] pl-[16px] 
+                        bg-[transparent] font-poppins font-normal 
+                        text-[14px] leading-[14px] text-[#000]
+                        focus:ouline-none focus:outline-primaryBlue"
                     />
                 </div>
                 {/* form group password */}
@@ -111,7 +107,7 @@ const LoginForm = () => {
                         onClick={handleInputClick}
                         type={toggleVis ? "text" : "password" } 
                         placeholder="Enter your password" 
-                        className="w-[396px] h-[48px] rounded-8px 
+                        className="w-[396px] h-[48px] rounded-[8px] 
                         border-[3px] border-[#DDD] pl-[16px] font-poppins 
                         font-normal text-[14px] leading-[14px] 
                         focus:ouline-none focus:outline-primaryBlue"
@@ -149,7 +145,7 @@ const LoginForm = () => {
                         Sign Up
                     </a>
                 </div>
-            </div>
+            </form>
             {/* error message container */}
             <div className="w-[350px] h-[80px] rounded-[10px] 
             bg-[transparent]">
@@ -187,4 +183,4 @@ const LoginForm = () => {
         </div>
     )
 }
-export default LoginForm
+export default LoginFormLight
